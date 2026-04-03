@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://crt7bd0hrwbst"]
+
+[ext_resource type="PackedScene" uid="uid://c3ojapjtlscma" path="res://player/player.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://cfr8tni3xvqgv" path="res://planetoid/planetoid.tscn" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://dj6yckntfpjbs" path="res://camera_3d.gd" id="2_feb5d"]
+
+[sub_resource type="Environment" id="Environment_80nbo"]
+background_mode = 1
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 3.14
+
+[node name="Game" type="Node3D" unique_id=1944131191]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1142579890]
+environment = SubResource("Environment_80nbo")
+
+[node name="Player" parent="." unique_id=844748037 instance=ExtResource("1_80nbo")]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=637937377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
+script = ExtResource("2_feb5d")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=984654347]
+transform = Transform3D(0, 0.5, -0.86602545, 0, 0.86602545, 0.5, 1, 0, 0, -115, 27, 26)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=2075688139]
+transform = Transform3D(-4.222196e-08, 0.25881904, 0.9659258, 1.131334e-08, 0.9659258, -0.25881904, -1, 0, -4.371139e-08, 57.26613, -10, 0)
+
+[node name="Planetoid" parent="." unique_id=404445011 instance=ExtResource("2_e2o6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 5, -664)
+
+[node name="Planetoid2" parent="." unique_id=444904648 instance=ExtResource("2_e2o6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 734, 5, 801)
+
+[node name="Planetoid3" parent="." unique_id=1644408451 instance=ExtResource("2_e2o6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 734, -388, -415)
+
+[node name="Planetoid4" parent="." unique_id=1955992068 instance=ExtResource("2_e2o6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -430, 83, -256)
+
+[editable path="Planetoid"]
+[editable path="Planetoid2"]
+[editable path="Planetoid3"]
+[editable path="Planetoid4"]
