@@ -4,6 +4,7 @@ extends Camera3D
 @export var offset = Vector3(0.0, 2.0, 6.0)
 @onready var target = %Player
 
+# currently broken if you look around a bunch - maybe needs normalization?
 # change to use quaternions for rotation and separate follow
 func _physics_process(delta):
 	if !target:
