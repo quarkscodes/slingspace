@@ -67,12 +67,12 @@ roll_right={
 ]
 }
 camera_pitch_up={
-"deadzone": 0.2,
+"deadzone": 0.5,
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":3,"axis_value":1.0,"script":null)
 ]
 }
 camera_pitch_down={
-"deadzone": 0.2,
+"deadzone": 0.5,
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":3,"axis_value":-1.0,"script":null)
 ]
 }
