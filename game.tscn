@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c3ojapjtlscma" path="res://player/player.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://cfr8tni3xvqgv" path="res://planetoid/planetoid.tscn" id="2_e2o6t"]
-[ext_resource type="Script" uid="uid://dj6yckntfpjbs" path="res://camera_3d.gd" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://bgonyja1ko8ln" path="res://player/camera_pivot.tscn" id="2_feb5d"]
 
 [sub_resource type="Environment" id="Environment_80nbo"]
 background_mode = 1
@@ -17,9 +17,8 @@ environment = SubResource("Environment_80nbo")
 [node name="Player" parent="." unique_id=844748037 instance=ExtResource("1_80nbo")]
 unique_name_in_owner = true
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=637937377]
+[node name="CameraPivot" parent="Player" unique_id=1756815400 instance=ExtResource("2_feb5d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
-script = ExtResource("2_feb5d")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=984654347]
 transform = Transform3D(0, 0.5, -0.86602545, 0, 0.86602545, 0.5, 1, 0, 0, -115, 27, 26)
@@ -38,6 +37,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 734, -388, -415)
 
 [node name="Planetoid4" parent="." unique_id=1955992068 instance=ExtResource("2_e2o6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -430, 83, -256)
+
+[connection signal="player_rotated" from="Player" to="Player/CameraPivot" method="_on_player_player_rotated"]
 
 [editable path="Planetoid"]
 [editable path="Planetoid2"]

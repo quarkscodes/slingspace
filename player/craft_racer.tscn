@@ -7,7 +7,7 @@ albedo_color = Color(1, 0.28235295, 0.1254902, 1)
 metallic = 0.6
 metallic_specular = 0.6
 
-[node name="racer" unique_id=1531933609 instance=ExtResource("1_yalxy")]
+[node name="Racer" unique_id=1531933609 instance=ExtResource("1_yalxy")]
 
 [node name="craft_racer" parent="." index="0" unique_id=1046953371]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
