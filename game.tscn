@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://cfr8tni3xvqgv" path="res://planetoid/planetoid.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://bgonyja1ko8ln" path="res://player/camera_pivot.tscn" id="2_feb5d"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_7jktm"]
+font_size = 32
+font_color = Color(0.8784314, 0.85882354, 0, 1)
+outline_size = 3
+outline_color = Color(0.06879827, 0.06879828, 0.06879828, 1)
+
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7jktm"]
 panorama = ExtResource("2_7jktm")
 
@@ -30,6 +36,19 @@ volumetric_fog_temporal_reprojection_enabled = false
 [node name="Game" type="Node3D" unique_id=1577607792]
 process_mode = 1
 script = ExtResource("1_fc0e3")
+
+[node name="SpeedDisplay" type="Label" parent="." unique_id=1853013989]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.0
+offset_right = 66.0
+offset_bottom = 45.0
+grow_horizontal = 2
+text = "0"
+label_settings = SubResource("LabelSettings_7jktm")
+horizontal_alignment = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=96780844]
 environment = SubResource("Environment_80nbo")
