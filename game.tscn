@@ -1,42 +1,56 @@
-[gd_scene format=3 uid="uid://crt7bd0hrwbst"]
+[gd_scene format=3 uid="uid://1c0xqfa3myv1"]
 
 [ext_resource type="PackedScene" uid="uid://c3ojapjtlscma" path="res://player/player.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://b57x10o13xfbh" path="res://game.gd" id="1_fc0e3"]
+[ext_resource type="Texture2D" path="/home/gix/repos/slingspace/kloppenheim_02_puresky_4k.exr" id="2_7jktm"]
 [ext_resource type="PackedScene" uid="uid://cfr8tni3xvqgv" path="res://planetoid/planetoid.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://bgonyja1ko8ln" path="res://player/camera_pivot.tscn" id="2_feb5d"]
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7jktm"]
+resource_local_to_scene = true
+panorama = ExtResource("2_7jktm")
+
+[sub_resource type="Sky" id="Sky_ryrav"]
+sky_material = SubResource("PanoramaSkyMaterial_7jktm")
+
 [sub_resource type="Environment" id="Environment_80nbo"]
-background_mode = 1
+background_mode = 2
+background_color = Color(0.1584723, 0.15847233, 0.1584723, 1)
+sky = SubResource("Sky_ryrav")
 ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 3.14
+ambient_light_energy = 16.0
+glow_enabled = true
 
-[node name="Game" type="Node3D" unique_id=1944131191]
+[node name="Game" type="Node3D" unique_id=1577607792]
+process_mode = 1
+script = ExtResource("1_fc0e3")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1142579890]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=96780844]
 environment = SubResource("Environment_80nbo")
 
-[node name="Player" parent="." unique_id=844748037 instance=ExtResource("1_80nbo")]
+[node name="Player" parent="." unique_id=556098890 instance=ExtResource("1_80nbo")]
 unique_name_in_owner = true
 
 [node name="CameraPivot" parent="Player" unique_id=1756815400 instance=ExtResource("2_feb5d")]
 top_level = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=984654347]
-transform = Transform3D(0, 0.5, -0.86602545, 0, 0.86602545, 0.5, 1, 0, 0, -115, 27, 26)
-
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=2075688139]
-transform = Transform3D(-4.222196e-08, 0.25881904, 0.9659258, 1.131334e-08, 0.9659258, -0.25881904, -1, 0, -4.371139e-08, 57.26613, -10, 0)
-
-[node name="Planetoid" parent="." unique_id=404445011 instance=ExtResource("2_e2o6t")]
+[node name="Planetoid" parent="." unique_id=444904648 instance=ExtResource("2_e2o6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 5, -664)
 
-[node name="Planetoid2" parent="." unique_id=444904648 instance=ExtResource("2_e2o6t")]
+[node name="Planetoid2" parent="." unique_id=1293030986 instance=ExtResource("2_e2o6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 734, 5, 801)
 
-[node name="Planetoid3" parent="." unique_id=1644408451 instance=ExtResource("2_e2o6t")]
+[node name="Planetoid3" parent="." unique_id=1035642784 instance=ExtResource("2_e2o6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 734, -388, -415)
 
-[node name="Planetoid4" parent="." unique_id=1955992068 instance=ExtResource("2_e2o6t")]
+[node name="Planetoid4" parent="." unique_id=133349014 instance=ExtResource("2_e2o6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -430, 83, -256)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=448933925]
+transform = Transform3D(0, 0.5, -0.86602545, 0, 0.86602545, 0.5, 1, 0, 0, -115, 27, 26)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=2013794904]
+transform = Transform3D(-4.222196e-08, 0.25881904, 0.9659258, 1.131334e-08, 0.9659258, -0.25881904, -1, 0, -4.371139e-08, 57.26613, -10, 0)
 
 [editable path="Planetoid"]
 [editable path="Planetoid2"]
