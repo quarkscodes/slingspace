@@ -18,8 +18,7 @@ radius = 256.0
 
 [sub_resource type="FogMaterial" id="FogMaterial_d6oqj"]
 density = 0.005
-albedo = Color(1, 0, 1, 1)
-emission = Color(0.7581918, 0.7581918, 0.7581917, 1)
+albedo = Color(0.85761696, 0.33472353, 0.63056266, 1)
 edge_fade = 0.5
 
 [node name="Planetoid" type="StaticBody3D" unique_id=444904648]

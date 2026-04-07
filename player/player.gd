@@ -2,7 +2,7 @@ extends RigidBody3D
 
 @export var drag_factor = 0.001
 @export var max_speed = 200.0
-@export var acceleration = 0.08
+@export var acceleration = 0.03
 @export var brake_strength = 0.98
 @export var input_response = 0.25
 
