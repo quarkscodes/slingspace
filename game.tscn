@@ -2,16 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://c3ojapjtlscma" path="res://player/player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://b57x10o13xfbh" path="res://game.gd" id="1_fc0e3"]
-[ext_resource type="Texture2D" path="/home/gix/repos/slingspace/kloppenheim_02_puresky_4k.exr" id="2_7jktm"]
+[ext_resource type="Texture2D" uid="uid://cs2v7gbi26n32" path="res://kloppenheim_02_puresky_4k.hdr" id="2_7jktm"]
 [ext_resource type="PackedScene" uid="uid://cfr8tni3xvqgv" path="res://planetoid/planetoid.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://bgonyja1ko8ln" path="res://player/camera_pivot.tscn" id="2_feb5d"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7jktm"]
-resource_local_to_scene = true
 panorama = ExtResource("2_7jktm")
 
 [sub_resource type="Sky" id="Sky_ryrav"]
 sky_material = SubResource("PanoramaSkyMaterial_7jktm")
+radiance_size = 1
 
 [sub_resource type="Environment" id="Environment_80nbo"]
 background_mode = 2
