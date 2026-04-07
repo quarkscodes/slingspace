@@ -4,7 +4,7 @@ extends RigidBody3D
 @export var max_speed = 200.0
 @export var acceleration = 0.08
 @export var brake_strength = 0.98
-@export var input_response = 0.3
+@export var input_response = 0.25
 
 var forward_speed = 0.0
 var pitch_input = 0.0
@@ -32,11 +32,11 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	if Input.is_action_pressed("throttle_down"):
 		state.linear_velocity *= brake_strength
 
-	#  Code below applies some drag - not sure if will be used in the end
-	#var current_speed = state.linear_velocity.length()
-#	
-	#if current_speed > 0:
-		#var drag = -state.linear_velocity.normalized() * current_speed * current_speed * drag_factor
-		#state.linear_velocity += drag
+	#Code below applies some drag - not sure if will be used in the end
+	var current_speed = state.linear_velocity.length()
+	
+	if current_speed > 0:
+		var drag = -state.linear_velocity.normalized() * current_speed * current_speed * drag_factor
+		state.linear_velocity += drag
 	
 	move_and_collide(state.linear_velocity)
