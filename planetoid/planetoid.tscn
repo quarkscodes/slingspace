@@ -16,6 +16,10 @@ radius = 128.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_tq031"]
 radius = 256.0
 
+[sub_resource type="FogMaterial" id="FogMaterial_d6oqj"]
+density = 0.02
+albedo = Color(1, 0, 1, 1)
+
 [node name="Planetoid" type="StaticBody3D" unique_id=444904648]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1567985039]
@@ -36,3 +40,8 @@ gravity = 5.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1494585527]
 shape = SubResource("SphereShape3D_tq031")
+
+[node name="FogVolume" type="FogVolume" parent="Area3D/CollisionShape3D" unique_id=1184031655]
+size = Vector3(512, 512, 512)
+shape = 0
+material = SubResource("FogMaterial_d6oqj")

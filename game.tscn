@@ -20,6 +20,9 @@ sky = SubResource("Sky_ryrav")
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 16.0
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_albedo = Color(1, 0, 1, 1)
 
 [node name="Game" type="Node3D" unique_id=1577607792]
 process_mode = 1
