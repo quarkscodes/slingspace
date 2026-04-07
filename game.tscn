@@ -23,6 +23,9 @@ glow_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 volumetric_fog_albedo = Color(1, 0, 1, 1)
+volumetric_fog_emission = Color(0.7581918, 0.7581918, 0.7581917, 1)
+volumetric_fog_length = 2048.0
+volumetric_fog_temporal_reprojection_enabled = false
 
 [node name="Game" type="Node3D" unique_id=1577607792]
 process_mode = 1
