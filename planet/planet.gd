@@ -1,7 +1,7 @@
 extends Node3D
 
-func _ready():
+func _ready() -> void:
 	for child in get_children():
-		var face := child as PlanetMeshFace
+		var face: PlanetMeshFace = child
 		face.regenerate_mesh()
 		

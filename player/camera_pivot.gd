@@ -1,9 +1,9 @@
 extends Node3D
 
-@export var input_response := 0.6
-@export var interpolation_weight := 3.0
+@export var input_response: float = 0.6
+@export var interpolation_weight: float = 3.0
 
-@onready var player := %Player
+@onready var player: RigidBody3D = %Player
 
 
 func _process(delta: float) -> void:
