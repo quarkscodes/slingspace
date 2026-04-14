@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://1c0xqfa3myv1"]
 
-[ext_resource type="PackedScene" uid="uid://c3ojapjtlscma" path="res://player/player.tscn" id="1_80nbo"]
-[ext_resource type="Script" uid="uid://b57x10o13xfbh" path="res://game.gd" id="1_fc0e3"]
-[ext_resource type="Texture2D" uid="uid://cs2v7gbi26n32" path="res://kloppenheim_02_puresky_4k.hdr" id="2_7jktm"]
-[ext_resource type="PackedScene" uid="uid://cfr8tni3xvqgv" path="res://planetoid/planetoid.tscn" id="2_e2o6t"]
-[ext_resource type="PackedScene" uid="uid://bgonyja1ko8ln" path="res://player/camera_pivot.tscn" id="2_feb5d"]
+[ext_resource type="Script" uid="uid://b57x10o13xfbh" path="res://game.gd" id="1_t88pq"]
+[ext_resource type="Texture2D" uid="uid://cs2v7gbi26n32" path="res://kloppenheim_02_puresky_4k.hdr" id="2_r0x5m"]
+[ext_resource type="PackedScene" uid="uid://c3ojapjtlscma" path="res://player/Player.tscn" id="3_3mrqo"]
+[ext_resource type="PackedScene" uid="uid://bgonyja1ko8ln" path="res://player/Camera_Pivot.tscn" id="4_joorw"]
+[ext_resource type="PackedScene" uid="uid://cfr8tni3xvqgv" path="res://planetoid/Planetoid.tscn" id="5_2vekm"]
+[ext_resource type="PackedScene" uid="uid://bip80ynsajxv6" path="res://planet/Planet.tscn" id="6_r0x5m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7jktm"]
 font_size = 32
@@ -13,7 +14,7 @@ outline_size = 3
 outline_color = Color(0.06879827, 0.06879828, 0.06879828, 1)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7jktm"]
-panorama = ExtResource("2_7jktm")
+panorama = ExtResource("2_r0x5m")
 
 [sub_resource type="Sky" id="Sky_ryrav"]
 sky_material = SubResource("PanoramaSkyMaterial_7jktm")
@@ -35,7 +36,7 @@ volumetric_fog_temporal_reprojection_enabled = false
 
 [node name="Game" type="Node3D" unique_id=1577607792]
 process_mode = 1
-script = ExtResource("1_fc0e3")
+script = ExtResource("1_t88pq")
 
 [node name="SpeedDisplay" type="Label" parent="." unique_id=1853013989]
 unique_name_in_owner = true
@@ -53,13 +54,15 @@ horizontal_alignment = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=96780844]
 environment = SubResource("Environment_80nbo")
 
-[node name="Player" parent="." unique_id=556098890 instance=ExtResource("1_80nbo")]
+[node name="Player" parent="." unique_id=556098890 instance=ExtResource("3_3mrqo")]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 
-[node name="CameraPivot" parent="Player" unique_id=1756815400 instance=ExtResource("2_feb5d")]
+[node name="CameraPivot" parent="Player" unique_id=1756815400 instance=ExtResource("4_joorw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 top_level = true
 
-[node name="Planetoid" parent="." unique_id=444904648 instance=ExtResource("2_e2o6t")]
+[node name="Planetoid" parent="." unique_id=444904648 instance=ExtResource("5_2vekm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6545, 0, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=857339247]
@@ -68,3 +71,5 @@ light_energy = 10.0
 light_volumetric_fog_energy = 0.0
 omni_range = 30000.0
 omni_attenuation = 0.0
+
+[node name="Planet" parent="." unique_id=1373645516 instance=ExtResource("6_r0x5m")]
