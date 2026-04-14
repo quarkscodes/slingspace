@@ -60,24 +60,11 @@ unique_name_in_owner = true
 top_level = true
 
 [node name="Planetoid" parent="." unique_id=444904648 instance=ExtResource("2_e2o6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 5, -664)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6545, 0, 0)
 
-[node name="Planetoid2" parent="." unique_id=1293030986 instance=ExtResource("2_e2o6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 734, 5, 801)
-
-[node name="Planetoid3" parent="." unique_id=1035642784 instance=ExtResource("2_e2o6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 734, -388, -415)
-
-[node name="Planetoid4" parent="." unique_id=133349014 instance=ExtResource("2_e2o6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -430, 83, -256)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=448933925]
-transform = Transform3D(0, 0.5, -0.86602545, 0, 0.86602545, 0.5, 1, 0, 0, -115, 27, 26)
-
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=2013794904]
-transform = Transform3D(-4.222196e-08, 0.25881904, 0.9659258, 1.131334e-08, 0.9659258, -0.25881904, -1, 0, -4.371139e-08, 57.26613, -10, 0)
-
-[editable path="Planetoid"]
-[editable path="Planetoid2"]
-[editable path="Planetoid3"]
-[editable path="Planetoid4"]
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=857339247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -800, 314, -4531)
+light_energy = 10.0
+light_volumetric_fog_energy = 0.0
+omni_range = 30000.0
+omni_attenuation = 0.0

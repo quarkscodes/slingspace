@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dqjbj10oqx45a"
-path="res://.godot/imported/craft_racer.glb-d971800eaeaaeb8fdbb928cfc5c8b15c.scn"
+uid="uid://c7t0ne7bptadn"
+path="res://.godot/imported/ship.gltf-9934a6d3cd9d6009a9e0bc47a4c6cd02.scn"
 
 [deps]
 
-source_file="res://player/craft_racer.glb"
-dest_files=["res://.godot/imported/craft_racer.glb-d971800eaeaaeb8fdbb928cfc5c8b15c.scn"]
+source_file="res://player/ship.gltf"
+dest_files=["res://.godot/imported/ship.gltf-9934a6d3cd9d6009a9e0bc47a4c6cd02.scn"]
 
 [params]
 

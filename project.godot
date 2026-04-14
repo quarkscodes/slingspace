@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Slingspace"
 run/main_scene="uid://1c0xqfa3myv1"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.6", "Double Precision", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]

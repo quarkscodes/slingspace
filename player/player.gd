@@ -2,9 +2,9 @@ extends RigidBody3D
 
 @export var drag_factor = 0.001
 @export var max_speed = 200.0
-@export var acceleration = 0.03
+@export var acceleration = 0.05
 @export var brake_strength = 0.98
-@export var input_response = 0.25
+@export var input_response = 0.4
 
 @onready var speed_display: Label = %SpeedDisplay
 
@@ -40,8 +40,8 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	speed_display.text = str(snapped(current_speed, 0.1))
 	
 	#Code below applies some drag - not sure if will be used in the end
-	#if current_speed > 0:
-		#var drag = -state.linear_velocity.normalized() * current_speed * current_speed * drag_factor
-		#state.linear_velocity += drag
+	if current_speed > 0:
+		var drag = -state.linear_velocity.normalized() * current_speed * current_speed * drag_factor
+		state.linear_velocity += drag
 	
 	move_and_collide(state.linear_velocity)
