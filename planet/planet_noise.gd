@@ -16,3 +16,7 @@ extends Resource
 		emit_changed()
 		if not noise_map.changed.is_connected(emit_changed):
 			noise_map.changed.connect(emit_changed)
+@export var use_first_layer_as_mask: bool = false:
+	set(val):
+		use_first_layer_as_mask = val
+		emit_changed()

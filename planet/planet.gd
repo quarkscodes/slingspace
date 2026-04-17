@@ -14,6 +14,8 @@ func _ready() -> void:
 
 
 func on_data_changed() -> void:
+	planet_data.min_height = 99999.0
+	planet_data.max_height = 0.0
 	for child: PlanetMeshFace in get_children():
 		var face: PlanetMeshFace = child
 		face.regenerate_mesh(planet_data)

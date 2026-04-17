@@ -73,4 +73,4 @@ omni_range = 30000.0
 omni_attenuation = 0.0
 
 [node name="Planet" parent="." unique_id=1381236522 instance=ExtResource("6_ryrav")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 608, 531, -2437)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 78, -3698)
