@@ -29,8 +29,9 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	var forward_dir: Vector3 = -global_transform.basis.z
 	
 	if Input.is_action_pressed("throttle_up"):
-		state.linear_velocity += \
-			forward_dir * acceleration * Input.get_action_strength("throttle_up")
+		state.linear_velocity += (
+				forward_dir * acceleration * Input.get_action_strength("throttle_up")
+		)
 	
 	if Input.is_action_pressed("throttle_down"):
 		state.linear_velocity *= brake_strength

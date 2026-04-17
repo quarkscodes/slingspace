@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ccqxycthrno10" path="res://planet/planet.gd" id="1_trgqv"]
 [ext_resource type="Script" uid="uid://1j58cbxeeh0v" path="res://planet/planet_mesh_face.gd" id="2_vn1r6"]
 
-[node name="Planet" type="Node3D" unique_id=1373645516]
+[node name="Planet" type="StaticBody3D" unique_id=1381236522]
 script = ExtResource("1_trgqv")
 
 [node name="Up" type="MeshInstance3D" parent="." unique_id=714216761]

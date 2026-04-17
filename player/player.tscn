@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c3ojapjtlscma"]
 
-[ext_resource type="PackedScene" uid="uid://6wpgvph63yee" path="res://player/Craft_Racer.tscn" id="1_oul6g"]
+[ext_resource type="PackedScene" uid="uid://6wpgvph63yee" path="res://player/craft_racer.tscn" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://6vv0sd4sfplg" path="res://player/player.gd" id="1_rkbax"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rkbax"]
