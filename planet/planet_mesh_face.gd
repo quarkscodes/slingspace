@@ -35,9 +35,11 @@ func regenerate_mesh(planet_data: PlanetData) -> void:
 					normal + (percent.x - 0.5) * 2.0 * axisA + (percent.y - 0.5) * 2.0 * axisB
 			)
 			var pointOnUnitSphere: Vector3 = pointOnUnitCube.normalized()
+			var biome_index: float = planet_data.biome_percent_from_point(pointOnUnitSphere)
 			var pointOnPlanet: Vector3 = planet_data.point_on_planet(pointOnUnitSphere)
 			
 			vertex_array[i] = pointOnPlanet
+			uv_array[i] = Vector2(0.0, biome_index)
 			
 			var l: float = pointOnPlanet.length()
 			if l < planet_data.min_height:
@@ -89,4 +91,4 @@ func _update_mesh(arrays: Array, planet_data: PlanetData) -> void:
 	
 	material_override.set_shader_parameter("min_height", planet_data.min_height)
 	material_override.set_shader_parameter("max_height", planet_data.max_height)
-	material_override.set_shader_parameter("height_color", planet_data.planet_color)
+	material_override.set_shader_parameter("height_color", planet_data.update_biome_texture())
