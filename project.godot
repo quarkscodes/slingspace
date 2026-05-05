@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Slingspace"
-run/main_scene="uid://1c0xqfa3myv1"
+run/main_scene="uid://g415au7vi51a"
 config/features=PackedStringArray("4.6", "Double Precision", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+gdscript/warnings/inferred_declaration=1
 
 [display]
 
