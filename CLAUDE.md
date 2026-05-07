@@ -54,6 +54,6 @@ Planet configurations are saved as `.tres` resource files under `assets/`. The s
 
 ## Coding Conventions
 
-- Static typing everywhere — always declare variable types explicitly rather than using bare `var`.
+- Always declare variable types explicitly — every `var`, loop variable, and parameter must have a type annotation (e.g. `var foo: String = ...`, `for child: Node in ...`). Never use bare `:=` inference.
 - `@tool` annotation on planet scripts enables real-time editor preview; be careful that tool-mode code paths don't crash in the editor (guard with `Engine.is_editor_hint()` when needed).
 - Mesh and collision rebuilds must use `call_deferred("_rebuild_mesh")` patterns, not inline calls from physics callbacks.
