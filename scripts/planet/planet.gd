@@ -9,7 +9,7 @@ extends StaticBody3D
 			planet_data.connect("changed", on_data_changed)
 
 @export var bake_output_path: String = "res://assets/baked_planets/"
-@export_tool_button("Bake Planet") var _bake_btn := bake_planet
+@export_tool_button("Bake Planet") var _bake_btn: Callable = bake_planet
 
 
 func _ready() -> void:
@@ -32,7 +32,7 @@ func bake_planet() -> void:
 	var baked: Node = duplicate(15)
 	_strip_generation_scripts(baked)
 
-	var scene := PackedScene.new()
+	var scene: PackedScene = PackedScene.new()
 	scene.pack(baked)
 	baked.queue_free()
 
