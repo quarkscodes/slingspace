@@ -17,12 +17,15 @@ func _ready() -> void:
 
 
 func on_data_changed() -> void:
+	if planet_data == null:
+		return
 	planet_data.min_height = 99999.0
 	planet_data.max_height = 0.0
+	var biome_texture: ImageTexture = planet_data.update_biome_texture()
 	for child: Node3D in get_children():
 		if child is PlanetMeshFace:
 			var face: PlanetMeshFace = child
-			face.regenerate_mesh(planet_data)
+			face.regenerate_mesh(planet_data, biome_texture)
 
 
 func bake_planet() -> void:
@@ -47,10 +50,7 @@ func bake_planet() -> void:
 
 
 func _strip_generation_scripts(node: Node) -> void:
-	var script: Script = node.get_script()
-	if script != null:
-		var path: String = script.resource_path
-		if path == "res://scripts/planet/planet.gd" or path == "res://scripts/planet/planet_mesh_face.gd":
-			node.set_script(null)
+	if node.get_script() == get_script() or node is PlanetMeshFace:
+		node.set_script(null)
 	for child: Node in node.get_children():
 		_strip_generation_scripts(child)

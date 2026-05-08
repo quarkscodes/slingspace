@@ -5,7 +5,7 @@ extends MeshInstance3D
 @export var normal: Vector3
 
 
-func regenerate_mesh(planet_data: PlanetData) -> void:
+func regenerate_mesh(planet_data: PlanetData, biome_texture: ImageTexture) -> void:
 	var arrays: Array = []
 	arrays.resize(Mesh.ARRAY_MAX)
 	
@@ -87,17 +87,17 @@ func regenerate_mesh(planet_data: PlanetData) -> void:
 	arrays[Mesh.ARRAY_INDEX] = index_array
 	
 	# Deferred so mesh and collision updates don't fire mid-physics-step or during @tool regeneration
-	call_deferred("_update_mesh", arrays, planet_data)
+	call_deferred("_update_mesh", arrays, planet_data, biome_texture)
 
 
-func _update_mesh(arrays: Array, planet_data: PlanetData) -> void:
+func _update_mesh(arrays: Array, planet_data: PlanetData, biome_texture: ImageTexture) -> void:
 	var _mesh: ArrayMesh = ArrayMesh.new()
 	_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
 	self.mesh = _mesh
-	
+
 	material_override.set_shader_parameter("min_height", planet_data.min_height)
 	material_override.set_shader_parameter("max_height", planet_data.max_height)
-	material_override.set_shader_parameter("height_color", planet_data.update_biome_texture())
+	material_override.set_shader_parameter("height_color", biome_texture)
 	
 	# create_trimesh_collision() appends new children each call, so free the old ones first
 	for child: StaticBody3D in get_children():

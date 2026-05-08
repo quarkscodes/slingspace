@@ -8,20 +8,15 @@ extends RigidBody3D
 
 @onready var speed_display: Label = %SpeedDisplay
 
-var forward_speed: float = 0.0
-var pitch_input: float = 0.0
-var roll_input: float = 0.0
-var yaw_input: float = 0.0
-
 
 func _process(delta: float) -> void:
-	angular_velocity.x = Input.get_axis("pitch_up", "pitch_down") * input_response
-	angular_velocity.y = Input.get_axis("yaw_left", "yaw_right") * input_response
-	angular_velocity.z = Input.get_axis("roll_left", "roll_right") * input_response
-	
-	basis = basis.rotated(basis.x, -angular_velocity.x * PI * delta).orthonormalized()
-	basis = basis.rotated(basis.y, -angular_velocity.y * PI * delta).orthonormalized()
-	basis = basis.rotated(basis.z, -angular_velocity.z * PI * delta).orthonormalized()
+	var pitch: float = Input.get_axis("pitch_up", "pitch_down") * input_response
+	var yaw: float = Input.get_axis("yaw_left", "yaw_right") * input_response
+	var roll: float = Input.get_axis("roll_left", "roll_right") * input_response
+
+	basis = basis.rotated(basis.x, -pitch * PI * delta).orthonormalized()
+	basis = basis.rotated(basis.y, -yaw * PI * delta).orthonormalized()
+	basis = basis.rotated(basis.z, -roll * PI * delta).orthonormalized()
 
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
